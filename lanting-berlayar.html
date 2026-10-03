@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lanting Kata Berlayar | LANTING KATA</title>
+  <link rel="stylesheet" href="css/lanting-berlayar.css">
+</head>
+<body class="berlayar-page">
+
+<header class="berlayar-header">
+  <a class="back-button" href="games.html">← Kembali ke Games</a>
+  <div class="brand"><span class="brand-mark">🛶</span><span>LANTING KATA</span></div>
+  <div class="header-content">
+    <span class="eyebrow">PETUALANGAN PASAR TERAPUNG</span>
+    <h1>Lanting Kata Berlayar</h1>
+    <p>Berlayar menyusuri pasar terapung, temukan kosakata Bahasa Banjar sesuai misi, lalu kumpulkan belanjaanmu!</p>
+  </div>
+</header>
+
+<main>
+  <section id="startSection" class="panel start-panel">
+    <div class="section-icon">🛶</div>
+    <h2>Siap Berlayar?</h2>
+    <p>Pilih kategori misi. Kamu harus mengumpulkan <strong>3 kosakata</strong> dari kategori tersebut.</p>
+    <div id="categoryChoices" class="category-grid"></div>
+    <button id="startButton" class="primary-button" type="button" disabled>🛶 Mulai Berlayar</button>
+    <p id="loadingText" class="loading-text">Memuat kosakata dari Kamus LANTING KATA...</p>
+  </section>
+
+  <section id="gameSection" class="game-section hidden">
+    <div class="mission-card">
+      <div>
+        <span class="small-label">🎯 MISI BELANJA</span>
+        <h2 id="missionTitle">Cari kosakata</h2>
+        <p id="missionText"></p>
+      </div>
+      <div class="score-box"><span>SKOR</span><strong id="score">0</strong></div>
+    </div>
+
+    <div class="river-scene">
+      <div class="sun">☀️</div>
+      <div class="cloud cloud-one">☁️</div>
+      <div class="cloud cloud-two">☁️</div>
+      <div class="shore shore-left">🌴 🌳 🌴</div>
+      <div class="shore shore-right">🌳 🌴 🌳</div>
+      <div class="water-lines"></div>
+      <div class="player-boat" id="playerBoat">🛶</div>
+      <div class="boat-label">Jukungmu</div>
+      <div class="market-area" id="marketArea"></div>
+    </div>
+
+    <div class="shopping-bar">
+      <div>
+        <span class="small-label">🧺 HASIL BELANJA</span>
+        <div id="basket" class="basket"></div>
+      </div>
+      <div class="progress-box">
+        <strong id="progress">0 / 3</strong>
+        <span>barang terkumpul</span>
+      </div>
+    </div>
+
+    <div id="feedback" class="feedback" aria-live="polite"></div>
+  </section>
+
+  <section id="resultSection" class="panel result-panel hidden">
+    <div class="result-icon">🎉</div>
+    <h2>Misi Selesai!</h2>
+    <p id="resultText"></p>
+    <div class="result-score"><span>Skor Akhir</span><strong id="finalScore">0</strong></div>
+    <button id="playAgainButton" class="primary-button" type="button">🛶 Main Lagi</button>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-brand">🛶 <strong>LANTING KATA</strong></div>
+  <p>Belajar Bahasa Banjar menjadi lebih mudah, menyenangkan, dan interaktif.</p>
+</footer>
+
+<script src="js/lanting-berlayar.js"></script>
+</body>
+</html>

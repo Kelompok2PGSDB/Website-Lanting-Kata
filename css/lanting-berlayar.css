@@ -1,0 +1,1757 @@
+/* =========================================================
+   LANTING KATA BERLAYAR
+   FULL CSS
+   - Header & footer style Games
+   - Sasirangan overlay
+   - Gameplay pasar terapung
+   - Jarak perahu diperlebar
+   - Animasi jukung menuju pilihan
+   - Responsive desktop & HP
+   ========================================================= */
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+:root {
+  --green-dark: #21483d;
+  --green: #356859;
+  --green-light: #eaf5ef;
+
+  --cream: #fffaf0;
+  --gold: #d6a84f;
+
+  --text: #263b36;
+  --muted: #61716c;
+
+  --white: #ffffff;
+
+  --success-bg: #e8f6ed;
+  --success-text: #2f7650;
+
+  --error-bg: #fff0eb;
+  --error-text: #a34b37;
+
+  --info-bg: #f1f6f4;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+}
+
+
+button,
+a {
+  font: inherit;
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+
+/* =========================================================
+   HEADER — GRADASI SASIRANGAN
+   ========================================================= */
+
+.berlayar-page .berlayar-header {
+
+  position: relative;
+
+  width: 100%;
+  min-height: 88px;
+
+  padding: 10px 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      135deg,
+      #21483d 0%,
+      #356859 55%,
+      #21483d 100%
+    );
+
+  color: #ffffff;
+
+  border-bottom: 3px solid #d6a84f;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 18px rgba(33, 72, 61, 0.15);
+
+  z-index: 10;
+}
+
+
+/* =========================================================
+   POLA SASIRANGAN HEADER
+   ========================================================= */
+
+.berlayar-page .berlayar-header::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    url("../assets/sasirangan-hijau.jpg");
+
+  background-size: 420px auto;
+
+  background-repeat: repeat;
+
+  background-position: center;
+
+  opacity: .09;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SEMUA ISI HEADER DI ATAS POLA
+   ========================================================= */
+
+.berlayar-page .berlayar-header > * {
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.berlayar-page .back-button {
+
+  position: relative;
+
+  z-index: 3;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 10px 16px;
+
+  border-radius: 999px;
+
+  border:
+    1px solid rgba(255, 255, 255, .22);
+
+  background:
+    rgba(255, 255, 255, .08);
+
+  color:
+    rgba(255, 255, 255, .92);
+
+  text-decoration: none;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition:
+    background .25s ease,
+    transform .25s ease,
+    border-color .25s ease;
+}
+
+
+.berlayar-page .back-button:hover {
+
+  background:
+    rgba(255, 255, 255, .16);
+
+  border-color:
+    rgba(214, 168, 79, .55);
+
+  transform:
+    translateX(-3px);
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.berlayar-page .brand {
+
+  position: relative;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  color: #ffffff;
+
+  font-size: 20px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+
+.berlayar-page .brand-mark {
+
+  width: 52px;
+
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  border: 3px solid #d6a84f;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, .20);
+
+  font-size: 27px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   HEADER CONTENT
+   ========================================================= */
+
+.berlayar-page .header-content {
+
+  position: relative;
+
+  z-index: 3;
+
+  max-width: 600px;
+
+  text-align: right;
+}
+
+
+.berlayar-page .eyebrow {
+
+  display: inline-block;
+
+  color: var(--gold);
+
+  border:
+    1px solid rgba(214, 168, 79, .55);
+
+  border-radius: 999px;
+
+  padding: 7px 14px;
+
+  margin: 0 0 8px;
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+
+.berlayar-page .header-content h1 {
+
+  margin: 0 0 7px;
+
+  color: #ffffff;
+
+  font-size: clamp(26px, 4vw, 40px);
+
+  line-height: 1.1;
+}
+
+
+.berlayar-page .header-content p {
+
+  margin: 0;
+
+  color:
+    rgba(255, 255, 255, .82);
+
+  line-height: 1.55;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.berlayar-page main {
+
+  width: min(1120px, 88%);
+
+  margin: auto;
+
+  padding: 55px 0 75px;
+}
+
+
+/* =========================================================
+   PANEL
+   ========================================================= */
+
+.berlayar-page .panel {
+
+  background: #ffffff;
+
+  border-radius: 28px;
+
+  padding: 42px;
+
+  box-shadow:
+    0 12px 35px rgba(33, 72, 61, .09);
+
+  text-align: center;
+}
+
+
+.berlayar-page .section-icon,
+.berlayar-page .result-icon {
+
+  font-size: 52px;
+}
+
+
+.berlayar-page .panel h2 {
+
+  margin: 12px 0 8px;
+
+  color: var(--green-dark);
+
+  font-size: 30px;
+}
+
+
+.berlayar-page .panel p {
+
+  line-height: 1.7;
+
+  color: #5f706b;
+}
+
+
+/* =========================================================
+   CATEGORY
+   ========================================================= */
+
+.berlayar-page .category-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 14px;
+
+  margin: 28px 0;
+}
+
+
+.berlayar-page .category-card {
+
+  border:
+    2px solid #e3eee8;
+
+  background:
+    #f8fcfa;
+
+  border-radius: 18px;
+
+  padding: 17px 10px;
+
+  cursor: pointer;
+
+  color: var(--green-dark);
+
+  font-weight: 800;
+
+  transition:
+    .2s ease;
+}
+
+
+.berlayar-page .category-card:hover:not(:disabled) {
+
+  transform:
+    translateY(-3px);
+
+  border-color:
+    var(--gold);
+}
+
+
+.berlayar-page .category-card.active {
+
+  border-color:
+    var(--green);
+
+  background:
+    var(--green-light);
+
+  box-shadow:
+    0 0 0 3px rgba(53, 104, 89, .08);
+}
+
+
+.berlayar-page .category-card:disabled {
+
+  opacity: .4;
+
+  cursor: not-allowed;
+}
+
+
+.berlayar-page .category-icon {
+
+  font-size: 27px;
+
+  display: block;
+
+  margin-bottom: 7px;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.berlayar-page .primary-button {
+
+  border: 0;
+
+  border-radius: 999px;
+
+  padding: 14px 27px;
+
+  background:
+    var(--green-dark);
+
+  color: #ffffff;
+
+  font-weight: 900;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 18px rgba(33, 72, 61, .18);
+
+  transition:
+    .2s ease;
+}
+
+
+.berlayar-page .primary-button:hover:not(:disabled) {
+
+  transform:
+    translateY(-2px);
+
+  background:
+    var(--green);
+}
+
+
+.berlayar-page .primary-button:disabled {
+
+  opacity: .45;
+
+  cursor: not-allowed;
+}
+
+
+.berlayar-page .loading-text {
+
+  font-size: 12px !important;
+
+  margin-top: 15px !important;
+}
+
+
+/* =========================================================
+   GAME SECTION
+   ========================================================= */
+
+.berlayar-page .game-section {
+
+  animation:
+    fadeUp .45s ease;
+}
+
+
+/* =========================================================
+   MISSION CARD
+   ========================================================= */
+
+.berlayar-page .mission-card {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  background: #ffffff;
+
+  padding: 22px 26px;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 8px 25px rgba(33, 72, 61, .08);
+
+  margin-bottom: 18px;
+}
+
+
+.berlayar-page .mission-card h2 {
+
+  margin: 5px 0;
+
+  color:
+    var(--green-dark);
+}
+
+
+.berlayar-page .mission-card p {
+
+  margin: 0;
+
+  color:
+    #61716c;
+}
+
+
+.berlayar-page .small-label {
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+
+  color:
+    var(--green);
+}
+
+
+/* =========================================================
+   SCORE
+   ========================================================= */
+
+.berlayar-page .score-box {
+
+  min-width: 110px;
+
+  text-align: center;
+
+  background:
+    #fff8e8;
+
+  border:
+    1px solid #ead39d;
+
+  border-radius: 17px;
+
+  padding: 10px;
+}
+
+
+.berlayar-page .score-box span {
+
+  display: block;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  color: #766544;
+
+  letter-spacing: 1px;
+}
+
+
+.berlayar-page .score-box strong {
+
+  font-size: 30px;
+
+  color:
+    var(--green-dark);
+}
+
+
+/* =========================================================
+   RIVER SCENE
+   ========================================================= */
+
+.berlayar-page .river-scene {
+
+  position: relative;
+
+  height: 500px;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      #bde7e8 0 32%,
+      #77c4c7 32%
+    );
+
+  box-shadow:
+    0 12px 30px rgba(33, 72, 61, .13);
+}
+
+
+/* =========================================================
+   SUN
+   ========================================================= */
+
+.berlayar-page .sun {
+
+  position: absolute;
+
+  right: 8%;
+
+  top: 25px;
+
+  font-size: 48px;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   CLOUD
+   ========================================================= */
+
+.berlayar-page .cloud {
+
+  position: absolute;
+
+  font-size: 43px;
+
+  opacity: .75;
+
+  z-index: 1;
+}
+
+
+.berlayar-page .cloud-one {
+
+  left: 18%;
+
+  top: 28px;
+}
+
+
+.berlayar-page .cloud-two {
+
+  left: 55%;
+
+  top: 75px;
+}
+
+
+/* =========================================================
+   SHORE
+   ========================================================= */
+
+.berlayar-page .shore {
+
+  position: absolute;
+
+  top: 105px;
+
+  font-size: 50px;
+
+  z-index: 2;
+}
+
+
+.berlayar-page .shore-left {
+
+  left: 0;
+}
+
+
+.berlayar-page .shore-right {
+
+  right: 0;
+}
+
+
+/* =========================================================
+   WATER LINES
+   ========================================================= */
+
+.berlayar-page .water-lines {
+
+  position: absolute;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 0;
+
+  height: 330px;
+
+  background:
+    repeating-linear-gradient(
+      170deg,
+      transparent 0 28px,
+      rgba(255, 255, 255, .18) 29px 31px
+    );
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   MARKET AREA
+   ========================================================= */
+
+.berlayar-page .market-area {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 4;
+}
+
+
+/* =========================================================
+   MARKET BOAT
+   JARAK ANTAR BENDA DIPERLEBAR MELALUI JS
+   ========================================================= */
+
+.berlayar-page .market-boat {
+
+  position: absolute;
+
+  width: 145px;
+
+  min-height: 112px;
+
+  background:
+    #8b5e3c;
+
+  border:
+    3px solid #6c472d;
+
+  border-radius:
+    45% 45% 30% 30%;
+
+  padding:
+    12px 8px 10px;
+
+  color: #ffffff;
+
+  text-align: center;
+
+  box-shadow:
+    0 7px 12px rgba(0, 0, 0, .15);
+
+  cursor: pointer;
+
+  transition:
+    transform .25s ease,
+    opacity .25s ease,
+    box-shadow .25s ease;
+
+  z-index: 6;
+}
+
+
+.berlayar-page .market-boat:hover:not(:disabled) {
+
+  transform:
+    translateY(-7px) scale(1.03);
+
+  box-shadow:
+    0 11px 18px rgba(0, 0, 0, .20);
+}
+
+
+.berlayar-page .market-boat:disabled {
+
+  cursor: default;
+}
+
+
+/* =========================================================
+   PEDAGANG
+   ========================================================= */
+
+.berlayar-page .vendor {
+
+  font-size: 25px;
+}
+
+
+.berlayar-page .goods {
+
+  font-size: 25px;
+
+  margin: 4px;
+}
+
+
+.berlayar-page .boat-name {
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   PLAYER BOAT / JUKUNG
+   ========================================================= */
+
+.berlayar-page .player-boat {
+
+  position: absolute;
+
+  z-index: 8;
+
+  left: 45%;
+
+  bottom: 48px;
+
+  font-size: 58px;
+
+  filter:
+    drop-shadow(
+      0 7px 4px rgba(0, 0, 0, .18)
+    );
+
+  /*
+    Animasi perpindahan jukung.
+    JS akan mengubah left + top.
+  */
+
+  transition:
+    left .85s ease-in-out,
+    top .85s ease-in-out,
+    transform .85s ease-in-out;
+
+  will-change:
+    left,
+    top,
+    transform;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   LABEL JUKUNG
+   ========================================================= */
+
+.berlayar-page .boat-label {
+
+  position: absolute;
+
+  z-index: 8;
+
+  left:
+    calc(45% - 4px);
+
+  bottom: 28px;
+
+  font-size: 11px;
+
+  background:
+    rgba(255, 255, 255, .9);
+
+  padding:
+    4px 8px;
+
+  border-radius:
+    999px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  transition:
+    left .85s ease-in-out,
+    top .85s ease-in-out,
+    transform .85s ease-in-out;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SHOPPING BAR
+   ========================================================= */
+
+.berlayar-page .shopping-bar {
+
+  margin-top: 18px;
+
+  background:
+    #ffffff;
+
+  padding:
+    20px 25px;
+
+  border-radius:
+    22px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  box-shadow:
+    0 8px 25px rgba(33, 72, 61, .08);
+}
+
+
+/* =========================================================
+   BASKET
+   ========================================================= */
+
+.berlayar-page .basket {
+
+  display: flex;
+
+  gap: 8px;
+
+  flex-wrap: wrap;
+
+  margin-top: 8px;
+}
+
+
+.berlayar-page .basket-item {
+
+  background:
+    var(--green-light);
+
+  border:
+    1px solid #c9e0d5;
+
+  padding:
+    7px 10px;
+
+  border-radius:
+    999px;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.berlayar-page .progress-box {
+
+  text-align: right;
+}
+
+
+.berlayar-page .progress-box span {
+
+  display: block;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  color: #766544;
+
+  letter-spacing: 1px;
+}
+
+
+.berlayar-page .progress-box strong {
+
+  display: block;
+
+  color:
+    var(--green-dark);
+
+  font-size: 23px;
+}
+
+
+/* =========================================================
+   FEEDBACK
+   ========================================================= */
+
+.berlayar-page .feedback {
+
+  min-height: 58px;
+
+  margin-top: 15px;
+
+  border-radius: 17px;
+
+  padding: 14px 18px;
+
+  text-align: center;
+
+  font-weight: 800;
+}
+
+
+.berlayar-page .feedback.success {
+
+  background:
+    var(--success-bg);
+
+  color:
+    var(--success-text);
+}
+
+
+.berlayar-page .feedback.error {
+
+  background:
+    var(--error-bg);
+
+  color:
+    var(--error-text);
+}
+
+
+.berlayar-page .feedback.info {
+
+  background:
+    var(--info-bg);
+
+  color:
+    var(--green-dark);
+}
+
+
+/* =========================================================
+   RESULT
+   ========================================================= */
+
+.berlayar-page .result-panel {
+
+  margin-top: 20px;
+}
+
+
+.berlayar-page .result-score {
+
+  margin:
+    25px auto;
+
+  width: 180px;
+
+  background:
+    #fff8e8;
+
+  border:
+    1px solid #ead39d;
+
+  border-radius:
+    20px;
+
+  padding:
+    14px;
+}
+
+
+.berlayar-page .result-score span {
+
+  display: block;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+
+.berlayar-page .result-score strong {
+
+  font-size: 40px;
+
+  color:
+    var(--green-dark);
+}
+
+
+/* =========================================================
+   FOOTER — GRADASI SASIRANGAN
+   ========================================================= */
+
+.berlayar-page footer {
+
+  position: relative;
+
+  width: 100%;
+
+  min-width: 100%;
+
+  margin: 0;
+
+  padding:
+    38px 7% 28px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #21483d 0%,
+      #356859 55%,
+      #21483d 100%
+    );
+
+  color: #ffffff;
+
+  border-top:
+    3px solid #d6a84f;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   POLA SASIRANGAN FOOTER
+   ========================================================= */
+
+.berlayar-page footer::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    url("../assets/sasirangan-hijau.jpg");
+
+  background-size:
+    420px auto;
+
+  background-repeat:
+    repeat;
+
+  background-position:
+    center;
+
+  opacity: .09;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   DEKORASI BULAT FOOTER
+   ========================================================= */
+
+.berlayar-page footer::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+
+  height: 420px;
+
+  right: -180px;
+
+  bottom: -280px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(214, 168, 79, .10);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   ISI FOOTER
+   ========================================================= */
+
+.berlayar-page footer > * {
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+   ========================================================= */
+
+.berlayar-page .footer-brand {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  color: #ffffff;
+
+  font-size: 20px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
+}
+
+
+.berlayar-page .footer-brand::first-letter {
+
+  font-size: 26px;
+}
+
+
+/* =========================================================
+   FOOTER DESCRIPTION
+   ========================================================= */
+
+.berlayar-page footer > p {
+
+  display: block;
+
+  width: 100%;
+
+  max-width: 500px;
+
+  margin:
+    0 auto;
+
+  color:
+    rgba(255, 255, 255, .86);
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  line-height: 1.6;
+
+  letter-spacing: .35px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+
+@keyframes fadeUp {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(12px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      none;
+
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .berlayar-page .berlayar-header {
+
+    min-height: 110px;
+
+    padding:
+      12px 5%;
+  }
+
+
+  .berlayar-page .brand {
+
+    font-size: 17px;
+  }
+
+
+  .berlayar-page .brand-mark {
+
+    width: 48px;
+
+    height: 48px;
+
+    font-size: 25px;
+  }
+
+
+  .berlayar-page .header-content {
+
+    max-width: 460px;
+  }
+
+
+  .berlayar-page .header-content h1 {
+
+    font-size: 29px;
+  }
+
+
+  .berlayar-page main {
+
+    width: 92%;
+
+    padding:
+      40px 0 60px;
+  }
+
+
+  .berlayar-page .category-grid {
+
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+
+  .berlayar-page .river-scene {
+
+    height: 500px;
+  }
+
+
+  .berlayar-page .market-boat {
+
+    width: 125px;
+
+    min-height: 105px;
+  }
+
+
+  .berlayar-page .mission-card,
+  .berlayar-page .shopping-bar {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .berlayar-page .progress-box {
+
+    text-align: left;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET KECIL
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .berlayar-page .berlayar-header {
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    align-items: stretch;
+
+    padding:
+      14px 5%;
+  }
+
+
+  .berlayar-page .brand {
+
+    order: -1;
+
+    justify-content: center;
+  }
+
+
+  .berlayar-page .back-button {
+
+    align-self: flex-start;
+  }
+
+
+  .berlayar-page .header-content {
+
+    max-width: 100%;
+
+    text-align: center;
+  }
+
+
+  .berlayar-page .eyebrow {
+
+    margin-top: 5px;
+  }
+
+
+  .berlayar-page .river-scene {
+
+    height: 520px;
+  }
+
+
+  .berlayar-page .market-boat {
+
+    width: 115px;
+
+    min-height: 100px;
+
+    padding:
+      10px 6px;
+  }
+
+
+  .berlayar-page .vendor {
+
+    font-size: 22px;
+  }
+
+
+  .berlayar-page .goods {
+
+    font-size: 22px;
+  }
+
+
+  .berlayar-page .boat-name {
+
+    font-size: 9px;
+  }
+
+
+  .berlayar-page .player-boat {
+
+    font-size: 52px;
+  }
+
+}
+
+
+/* =========================================================
+   HP
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+  .berlayar-page .berlayar-header {
+
+    padding:
+      13px 4%;
+  }
+
+
+  .berlayar-page .brand {
+
+    font-size: 15px;
+
+    letter-spacing: 1px;
+  }
+
+
+  .berlayar-page .brand-mark {
+
+    width: 45px;
+
+    height: 45px;
+
+    font-size: 23px;
+
+    border-width: 2px;
+  }
+
+
+  .berlayar-page .back-button {
+
+    font-size: 11px;
+
+    padding:
+      8px 11px;
+  }
+
+
+  .berlayar-page .header-content h1 {
+
+    font-size: 27px;
+  }
+
+
+  .berlayar-page .header-content p {
+
+    font-size: 12px;
+  }
+
+
+  .berlayar-page main {
+
+    width: 92%;
+
+    padding:
+      35px 0 50px;
+  }
+
+
+  .berlayar-page .panel {
+
+    padding:
+      28px 18px;
+  }
+
+
+  .berlayar-page .panel h2 {
+
+    font-size: 25px;
+  }
+
+
+  .berlayar-page .category-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 10px;
+  }
+
+
+  .berlayar-page .category-card {
+
+    font-size: 12px;
+
+    padding:
+      14px 7px;
+  }
+
+
+  /*
+    Area sungai dibuat sedikit lebih tinggi
+    supaya perahu tetap punya ruang.
+  */
+
+  .berlayar-page .river-scene {
+
+    height: 560px;
+
+    border-radius: 22px;
+  }
+
+
+  /*
+    Perahu diperkecil di HP.
+  */
+
+  .berlayar-page .market-boat {
+
+    width: 96px;
+
+    min-height: 90px;
+
+    padding:
+      8px 5px;
+  }
+
+
+  .berlayar-page .vendor {
+
+    font-size: 19px;
+  }
+
+
+  .berlayar-page .goods {
+
+    font-size: 19px;
+
+    margin: 2px;
+  }
+
+
+  .berlayar-page .boat-name {
+
+    font-size: 8px;
+  }
+
+
+  .berlayar-page .player-boat {
+
+    font-size: 48px;
+
+    left: 39%;
+
+    bottom: 45px;
+  }
+
+
+  .berlayar-page .boat-label {
+
+    left: 35%;
+
+    bottom: 24px;
+
+    font-size: 10px;
+  }
+
+
+  .berlayar-page footer {
+
+    padding:
+      32px 18px 25px;
+  }
+
+
+  .berlayar-page .footer-brand {
+
+    font-size: 17px;
+  }
+
+
+  .berlayar-page footer > p {
+
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================================
+   HP SANGAT KECIL
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .berlayar-page .river-scene {
+
+    height: 575px;
+  }
+
+
+  .berlayar-page .market-boat {
+
+    width: 86px;
+
+    min-height: 84px;
+  }
+
+
+  .berlayar-page .vendor {
+
+    font-size: 17px;
+  }
+
+
+  .berlayar-page .goods {
+
+    font-size: 17px;
+  }
+
+
+  .berlayar-page .boat-name {
+
+    font-size: 7px;
+  }
+
+
+  .berlayar-page .player-boat {
+
+    font-size: 44px;
+  }
+
+}
